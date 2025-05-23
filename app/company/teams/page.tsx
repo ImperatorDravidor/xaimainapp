@@ -35,6 +35,7 @@ import {
   Cell
 } from "recharts";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SubNavigation, SubNavigationTabs } from "@/components/ui/sub-navigation";
 import { useRouter } from "next/navigation";
 import { Settings } from "lucide-react";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -181,9 +182,21 @@ export default function TeamsPage() {
     return (
       <div className="space-y-6">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <div>
-            <h1 className="text-3xl font-bold text-white">AI Teams</h1>
-            <p className="text-gray-400 mt-1">Manage your AI workforce across departments</p>
+          <div className="flex items-center gap-6">
+            <div>
+              <h1 className="text-3xl font-bold text-white">AI Teams</h1>
+              <p className="text-gray-400 mt-1">Manage your AI workforce across departments</p>
+            </div>
+            <SubNavigation>
+              <SubNavigationTabs 
+                tabs={[
+                  { value: "teams", label: "Teams" },
+                  { value: "analytics", label: "Analytics" }
+                ]}
+                defaultValue="teams"
+                className="w-auto"
+              />
+            </SubNavigation>
           </div>
           <Button
             onClick={() => setShowTemplateSelector(true)}
@@ -195,11 +208,6 @@ export default function TeamsPage() {
         </div>
 
         <Tabs defaultValue="teams" className="w-full">
-          <TabsList className="grid grid-cols-2 w-full max-w-md mb-6">
-            <TabsTrigger value="teams" className="rounded-l-md">Teams</TabsTrigger>
-            <TabsTrigger value="analytics" className="rounded-r-md">Analytics</TabsTrigger>
-          </TabsList>
-          
           <TabsContent value="teams" className="space-y-6">
             {/* Search and Filter Section */}
             <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">

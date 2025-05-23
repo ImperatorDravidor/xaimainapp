@@ -1,4 +1,14 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# XanderAI - Enterprise AI Workforce Platform
+
+XanderAI is a comprehensive platform designed to help enterprises leverage AI to enhance team productivity and reduce operational costs.
+
+## Features
+
+- **AI Teams Management**: Create, monitor, and optimize AI-powered teams
+- **Analytics Dashboard**: Track performance and efficiency metrics
+- **Intelligent Tools**: Built-in AI-powered tools for various workflows
+- **Company Management**: Organize your enterprise with team and user management
+- **Authentication**: Secure login and user management with Clerk
 
 ## Getting Started
 
@@ -16,7 +26,46 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
+
+```
+xaimainapp/
+├── app/                    # Next.js App Router
+│   ├── administration/     # Admin settings and controls
+│   ├── authentication/     # Auth pages (login, signup, onboarding)
+│   ├── company/            # Company structure (teams, members, workflows)
+│   ├── intelligence/       # AI intelligence features
+│   ├── platform/           # Main platform pages
+│   └── tools/              # Specialized tools and utilities
+├── components/             # React components
+│   ├── auth/               # Authentication components
+│   ├── blocks/             # Reusable content blocks
+│   ├── dashboard/          # Dashboard-specific components
+│   ├── hooks/              # Component-specific hooks
+│   ├── transitions/        # Animation components
+│   └── ui/                 # UI component library
+├── hooks/                  # Application hooks
+├── lib/                    # Utility functions and libraries
+├── public/                 # Static assets
+└── styles/                 # Global styles
+```
+
+## Technologies Used
+
+- [Next.js](https://nextjs.org/) - React framework
+- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
+- [Clerk](https://clerk.dev/) - Authentication
+- [Framer Motion](https://www.framer.com/motion/) - Animation library
+- [Recharts](https://recharts.org/) - Chart components
+- [Radix UI](https://www.radix-ui.com/) - Headless UI components
+- [Zustand](https://zustand-demo.pmnd.rs/) - State management
+
+## Development Guidelines
+
+1. Follow the established component structure
+2. Maintain consistent styling using the Tailwind classes
+3. Reuse UI components from the component library
+4. Keep pages organized within their functional areas
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 

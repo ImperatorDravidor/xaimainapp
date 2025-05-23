@@ -812,16 +812,10 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                 </motion.div>
               )}
               
-              {/* Content */}
-              <motion.main 
-                key="content"
-                className="flex-1 overflow-auto scrollbar-thin scrollbar-thumb-neutral-700 scrollbar-track-transparent"
-                initial={false}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-              >
+              {/* Main content area */}
+              <main className="flex-1 overflow-auto">
                 {children}
-              </motion.main>
+              </main>
             </div>
           </motion.div>
         </div>
