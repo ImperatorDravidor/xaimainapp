@@ -57,7 +57,8 @@ import {
   Activity,
   Sun,
   Moon,
-  FileText
+  FileText,
+  Sparkles
 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ChatWidget } from "@/components/dashboard/chat-widget";
@@ -268,6 +269,12 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
     {
       section: "Tools",
       items: [
+        {
+          name: "Xander Workspace",
+          icon: <Sparkles size={18} />,
+          href: "/tools/workspace",
+          active: pathname.includes("/tools/workspace")
+        },
         {
           name: "Talk to Xander",
           icon: <MessageSquare size={18} />,

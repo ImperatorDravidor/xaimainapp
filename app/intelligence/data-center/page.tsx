@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import DashboardLayout from "@/components/dashboard/layout";
+import CompanyBrain from "@/components/dashboard/company-brain";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -28,7 +29,8 @@ import {
   Trash2,
   Lock,
   Eye,
-  CloudCog
+  CloudCog,
+  Brain
 } from "lucide-react";
 import { 
   DropdownMenu,
@@ -205,6 +207,9 @@ export default function DataCenterPage() {
                 </TabsTrigger>
                 <TabsTrigger value="files" className="data-[state=active]:bg-blue-600">
                   <FileText size={14} className="mr-1.5" /> Files
+                </TabsTrigger>
+                <TabsTrigger value="company-brain" className="data-[state=active]:bg-blue-600">
+                  <Brain size={14} className="mr-1.5" /> Company Brain
                 </TabsTrigger>
               </TabsList>
               
@@ -448,6 +453,10 @@ export default function DataCenterPage() {
                     <div className="text-xs text-neutral-400">Showing {uploadedFiles.length} files</div>
                   </CardFooter>
                 </Card>
+              </TabsContent>
+              
+              <TabsContent value="company-brain" className="mt-4 space-y-4">
+                <CompanyBrain />
               </TabsContent>
             </Tabs>
           </motion.div>
