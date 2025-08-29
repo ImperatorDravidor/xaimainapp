@@ -1,9 +1,28 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  outputFileTracingRoot: process.cwd(),
   images: {
-    domains: ['images.unsplash.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
+  reactStrictMode: true,
+  experimental: {
+  },
+  turbopack: {
+    root: process.cwd(),
+  },
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+  typescript: {
+    ignoreBuildErrors: false,
   },
 };
 
